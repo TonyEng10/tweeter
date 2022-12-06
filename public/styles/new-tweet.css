@@ -1,5 +1,5 @@
 #tweet-text {
-  border-bottom-color: black;
+  border-bottom-color: grey;
   border-bottom-width: 5px;
   border-left-width: 0px;
   border-right-width: 0px;
@@ -7,3 +7,26 @@
   width: 700px;
 }
 
+.tweetbutton {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Bungee', cursive;
+  border: 2px solid blue;
+  padding: 10px 0px;
+}
+
+button {
+  background-color: #4056A1;
+  color: white;
+  padding: 5px 10px;
+}
+
+output {
+  padding: 5px 10px;
+  color: grey;
+}
+
+textarea {
+  font-weight: bold;
+  color: grey;
+}
