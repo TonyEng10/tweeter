@@ -1,0 +1,36 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  /* border: 2px solid red; */
+  height: 120px;
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 0 1.5em;
+  width: 100%;
+  position: fixed;
+}
+
+span.nav1 {
+  border: 2px solid yellow;
+  font-family: 'Bungee', cursive;
+}
+
+div.nav2 {
+  display: flex;
+  /* margin */
+  /* border: 2px solid green; */
+}
+
+.nav3 {
+  
+  display: flex;
+  border: 2px solid orange;
+  justify-content: center;
+  margin: auto;
+}
+
+b {
+  margin-right: 5px;
+}
