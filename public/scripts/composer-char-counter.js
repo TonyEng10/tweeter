@@ -16,5 +16,9 @@ $(document).ready(function () {
       $("output").removeClass("redcounter noClass").addClass("counter");
     }
   })
-  });
+  
+
+
+});
+
 
