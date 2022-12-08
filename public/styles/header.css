@@ -1,27 +1,27 @@
 header {
   display: flex;
-  border: 5px solid purple;
+  /* border: 5px solid purple; */
   height: 520px;
   padding-top: 120px;
   flex-direction: column;
   align-content: flex-end;
   /* justify-content: center;
   align-items: center; */
-  background-color: #23e851;
+  background-color: #4056A1;
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 
 div.avatar {
   display: flex;
-  border: 2px solid green;
+  /* border: 2px solid green; */
   justify-content: center;
   align-items: flex-end;
 }
 
 div.yourName {
   display: flex;
-  border: 2px solid orange;
+  /* border: 2px solid orange; */
   justify-content: center;
   align-items: flex-end;
 }

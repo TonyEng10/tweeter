@@ -42,6 +42,15 @@ $(document).ready(function () {
     }
   }
 
+  const loadTweets = () => {
+    $.get("/tweets", (data) => {
+      console.log("data from loadTweets:", data);
+      renderTweets(data);
+    })
+  };
+
+  loadTweets();
+
   const createTweetElement = (tweetData) => {
     const $tweetData = $(`
       <article class="storedtweets">
@@ -72,20 +81,21 @@ $(document).ready(function () {
 
   $form.on("submit", (event) => {
     event.preventDefault();
+    const tweetContent = $("#tweet-text").val();
+    if (tweetContent.length === 0) {
+      return alert("nothing to tweet. start typing");
+    }
+    if (tweetContent.length > 140) {
+      return alert("tweet content way too long. pls keep it at 140 characters or less")
+    }
     const convertedFormData = $form.serialize();
     $.post("/tweets", convertedFormData, (data) => {
       console.log("data from /post eventlistner", data);
+      loadTweets(); // GET
     })
   });
 
-  const loadTweets = () => {
-    $.get("/tweets", (data) => {
-      console.log("data from loadTweets:", data);
-      renderTweets(data);
-    })
-  };
 
-  loadTweets();
   // $.post("/tweets", convertedFormData, (response) => {
   //   console.log(response);
   // });
