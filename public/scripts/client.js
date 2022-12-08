@@ -33,6 +33,7 @@ $(document).ready(function () {
   //     "created_at": 1461113959088
   //   }
   // ]
+  // $(".too-long").
 
   const renderTweets = function (tweets) {
     for (const tweet of tweets) {
@@ -51,6 +52,13 @@ $(document).ready(function () {
 
   loadTweets();
 
+  const escape = (str) => {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+ 
+
   const createTweetElement = (tweetData) => {
     const $tweetData = $(`
       <article class="storedtweets">
@@ -63,7 +71,7 @@ $(document).ready(function () {
           <div class="email">${tweetData.user.handle}</div>
         </div>
         <div class="prevtweetsborder">
-          <div class="prevtweets">${tweetData.content.text}</div>
+          <div class="prevtweets">${escape(tweetData.content.text)}</div>
         </div>
         <div class="dateposted">
         <div class="date">${timeago.format(tweetData.created_at)}</div>
@@ -78,21 +86,34 @@ $(document).ready(function () {
 
 
   const $form = $("#new-tweet-form");
+  const $errorlong = $(".too-long")
+  const $errornotext = $(".no-text")
+
+  $(document).ready(() => {
+    $errorlong.hide();
+    $errornotext.hide();
+  });
+
 
   $form.on("submit", (event) => {
     event.preventDefault();
     const tweetContent = $("#tweet-text").val();
     if (tweetContent.length === 0) {
-      return alert("nothing to tweet. start typing");
+      $errorlong.hide();
+      return $errornotext.show(600);
     }
     if (tweetContent.length > 140) {
-      return alert("tweet content way too long. pls keep it at 140 characters or less")
-    }
+      $errornotext.hide();
+      return $errorlong.show(600);
+    } else 
+    $errorlong.hide(600);
+    $errornotext.hide(600);
     const convertedFormData = $form.serialize();
     $.post("/tweets", convertedFormData, (data) => {
       console.log("data from /post eventlistner", data);
       loadTweets(); // GET
     })
+    
   });
 
 
