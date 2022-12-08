@@ -57,7 +57,7 @@ $(document).ready(function () {
           <div class="prevtweets">${tweetData.content.text}</div>
         </div>
         <div class="dateposted">
-          <div class="date">${tweetData.created_at}</div>
+        <div class="date">${timeago.format(tweetData.created_at)}</div>
           <div class="icons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i
             class="fa-solid fa-heart"></i></div>
         </div>
@@ -69,13 +69,13 @@ $(document).ready(function () {
 
 
   const $form = $("#new-tweet-form");
-  
+
   $form.on("submit", (event) => {
     event.preventDefault();
     const convertedFormData = $form.serialize();
     $.post("/tweets", convertedFormData, (data) => {
       console.log("data from /post eventlistner", data);
-  })
+    })
   });
 
   const loadTweets = () => {
@@ -89,7 +89,7 @@ $(document).ready(function () {
   // $.post("/tweets", convertedFormData, (response) => {
   //   console.log(response);
   // });
- 
+
   // Test / driver code (temporary)
   // console.log($tweet); // to see what it looks like
   // $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
