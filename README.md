@@ -16,3 +16,12 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+
+!["Screenshot of new tweet in larger screen format](https://user-images.githubusercontent.com/116857221/206614091-0e180f4d-f54d-4cc0-9555-99688a2faf64.png)
+
+!["Screenshot of new tweet in smaller screen format](https://user-images.githubusercontent.com/116857221/206614242-eead50a8-39ae-4c8a-b119-076b8912499e.png)
+
+!["Screenshot of tweet box and working counter"](https://user-images.githubusercontent.com/116857221/206614591-b692f6de-6b09-4fbf-b942-d2fad1c83284.png)
