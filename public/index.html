@@ -19,7 +19,9 @@
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- External JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
   <!-- App JS -->
@@ -40,59 +42,39 @@
   <nav>
     <span class="nav1">tweeter</span>
     <div>
-      <div class="nav2"><b>Write </b> a new tweet</div>
+      <div class="nav2"><button><b>Write </b> a new tweet</button></div>
       <div class="nav3"><i style="color: red" class="fa-solid fa-angles-down"></i></div>
     </div>
   </nav>
 
   <!-- Page-specific (main) content here -->
   <div class="header-main-wrapper">
-  <header>
-    <div class="avatar">
-      <img src="/images/profile-hex.png">
-    </div>
-    <br>
-    <div class="yourName">
-      <h2>Your Name</h2>
-    </div>
-  </header>
-  <main class="container">
-    <section class="new-tweet">
-      <h3 class="no-text">nothing to tweet. start typing</h3>
-      <h3 class="too-long">tweet content way too long. pls keep it at 140 characters or less</h3>
-      <form id="new-tweet-form" method="POST" action="/tweets">
-        <label for="tweet-text"><textarea name="text" id="tweet-text"
-            placeholder="What are you humming about?"></textarea></label>
-
-        <div class="tweetbutton">
-          <button type="submit">Tweet</button>
-          <output id="real-counter" name="counter" class="counter" for="tweet-text">140</output>
-        </div>
-      </form>
-    </section>
-    <section class="tweet-container">
-      <!-- <article class="storedtweets">
-        <div class="avataremail">
-          <div class="tweeticon"><img width="40px" height="40px"
-              src="https://i.imgur.com/nlhLi3I.png%22,%22https://i.imgur.com/z5LNkkB.png%22,%22https://i.imgur.com/v0JXau2.png%22,%22https://i.imgur.com/lRUnDgU.png">
-            <p class="iconname">Wendy</p>
+    <header>
+      <div class="avatar">
+        <img src="/images/profile-hex.png">
+      </div>
+      <br>
+      <div class="yourName">
+        <h2>Your Name</h2>
+      </div>
+    </header>
+    <main class="container">
+      <section class="new-tweet">
+        <h3 class="no-text">nothing to tweet. start typing</h3>
+        <h3 class="too-long">tweet content way too long. pls keep it at 140 characters or less</h3>
+        <form id="new-tweet-form" method="POST" action="/tweets">
+          <label for="tweet-text"><textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea></label>
+          <div class="tweetbutton">
+            <button class="tweet-button" type="submit">Tweet</button>
+            <output id="real-counter" name="counter" class="counter" for="tweet-text">140</output>
           </div>
-          <div class="email"> @Wendy</div>
-        </div>
-        <div class="prevtweetsborder">
-          <div class="prevtweets">Hello World!</div>
-        </div>
-        <div class="dateposted">
-          <div class="date"> 10 days ago</div>
-          <div class="icons"><i class="fa-solid fa-flag"></i><i class="fa-solid fa-retweet"></i><i
-              class="fa-solid fa-heart"></i></div>
-        </div>
-
-      </article> -->
-    </section>
-  </main>
-</div>
-
+        </form>
+      </section>
+      <section class="tweet-container">
+      </section>
+    </main>
+  </div>
+  
 </body>
 
 </html>

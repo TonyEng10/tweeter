@@ -36,12 +36,3 @@ app.listen(PORT, () => {
   console.log("Example app listening on port " + PORT);
 });
 
-// tweetsRoutes.post("/tweets", function(req, res) {
-//   // console.log("hello");
-//   // console.log(req.body);
-  
-//   // if (!req.body) {
-//   //   return res.status(400).send("blank tweet pls write something to tweet")
-//   // } else
-//   return res.status(201).send("tweet sent!");
-// })
