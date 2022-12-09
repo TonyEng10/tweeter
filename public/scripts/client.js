@@ -34,11 +34,12 @@ $(document).ready(function () {
   //   }
   // ]
   // $(".too-long").
+  const $tweetSection = $(".tweet-container")
 
   const renderTweets = function (tweets) {
+    $tweetSection.empty();
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      const $tweetSection = $(".tweet-container")
       $tweetSection.prepend($tweet);
     }
   }
@@ -99,19 +100,20 @@ $(document).ready(function () {
     event.preventDefault();
     const tweetContent = $("#tweet-text").val();
     if (tweetContent.length === 0) {
-      $errorlong.hide();
-      return $errornotext.show(600);
+      $errorlong.slideUp();
+      return $errornotext.slideDown(600);
     }
     if (tweetContent.length > 140) {
-      $errornotext.hide();
-      return $errorlong.show(600);
+      $errornotext.slideUp();
+      return $errorlong.slideDown(600);
     } else 
-    $errorlong.hide(600);
-    $errornotext.hide(600);
+    $errorlong.slideUp(600);
+    $errornotext.slideUp(600);
     const convertedFormData = $form.serialize();
     $.post("/tweets", convertedFormData, (data) => {
       console.log("data from /post eventlistner", data);
       loadTweets(); // GET
+      $("#tweet-text").val("").attr("placeholder", "What are you humming about?");
     })
     
   });
